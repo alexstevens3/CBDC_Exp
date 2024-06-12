@@ -1,0 +1,76 @@
+{{ block title }}
+    Seite 17 von 17
+{{ endblock }}
+
+{{ block content }}
+Bitte beantworten Sie die folgenden Fragen.
+
+{{formfield 'age'}}
+
+{{formfield 'gender'}}
+
+{{formfield 'income'}}
+
+<p>Was ist Ihre Erwerbssituation? (Mehrfachnennungen möglich.)</p>
+<div class="form-check">
+    <input class="form-check-input" type="checkbox" value="Vollzeiterwerbstätig" name="Vollzeiterwerbstätig">
+    <label class="form-check-label">
+      Vollzeiterwerbstätig
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="Teilzeiterwerbstätig" name="Teilzeiterwerbstätig">
+    <label class="form-check-label">
+      Teilzeiterwerbstätig
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="Geringfügig_erwerbstätig" name="Geringfügig_erwerbstätig">
+    <label class="form-check-label">
+      Geringfügig erwerbstätig
+    </label>
+  </div>
+<div class="form-check">
+  <input class="form-check-input" type="checkbox" value="Minijob" name="Minijob">
+  <label class="form-check-label">
+    Minijob
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="checkbox" value="Ruhestand" name="Ruhestand">
+  <label class="form-check-label">
+    Ruhestand
+  </label>
+</div>
+<div class="form-check">
+    <input class="form-check-input" type="checkbox" value="Studentin_oder_Student" name="Studentin_oder_Student">
+    <label class="form-check-label">
+      Studentin oder Student
+    </label>
+  </div>
+<div class="form-check">
+    <input class="form-check-input" type="checkbox" value="Selbstständig" name="Selbstständig">
+    <label class="form-check-label">
+      Selbstständig
+    </label>
+</div>
+<div class="form-check">
+    <input class="form-check-input" type="checkbox" value="Nicht_erwerbstätig_und_Arbeitssuchend" name="Nicht_erwerbstätig_und_Arbeitssuchend">
+    <label class="form-check-label">
+        Nicht erwerbstätig und Arbeitssuchend
+    </label>
+</div>
+<div class="form-check">
+    <input class="form-check-input" type="checkbox" value="Nicht_erwerbstätig_und_nicht_Arbeitssuchend" name="Nicht_erwerbstätig_und_nicht_Arbeitssuchend">
+    <label class="form-check-label">
+        Nicht erwerbstätig und nicht Arbeitssuchend
+    </label>
+</div>
+
+
+
+{{formfield 'education'}}
+
+
+    {{ next_button }}
+{{ endblock }}

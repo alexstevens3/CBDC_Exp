@@ -1,0 +1,130 @@
+{{ block title }}
+Marktrunde {{ player.round_number }} von {{C.NUM_ROUNDS}}
+{{ endblock }}
+
+{{ block content }}
+
+
+{{ if player.MOP2_accept == True}}
+
+<p>Der Verkäufer akzeptiert Zahlungsmittel 2. </p>
+
+{{ endif }}
+
+{{ if player.MOP2_accept == False }}
+
+<p>Der Verkäufer akzeptiert Zahlungsmittel 2 <b>nicht</b>. </p>
+
+{{ endif }}
+
+{{if group.share_players_CBDC_Yes >= 50}}
+
+<p>Der Anteil der Käufer, die {{C.Adoption_MOP3|to2}} Taler für die Nutzung von Zahlungsmittel 3 gezahlt haben ist {{group.share_players_CBDC_Yes |to0}}%. Der Verkäufer akzeptiert Zahlungsmittel 3.</p>
+
+{{ endif }}
+
+{{if group.share_players_CBDC_Yes < 50}}
+
+<p>Der Anteil der Käufer, die {{C.Adoption_MOP3|to2}} Taler für die Nutzung von Zahlungsmittel 3 gezahlt haben ist {{group.share_players_CBDC_Yes |to0}}%. Der Verkäufer akzeptiert Zahlungsmittel 3 <b>nicht</b>.</p>
+
+{{ endif }}
+
+
+<p>Ihre Entscheidung in Marktrunde {{ player.round_number }}:</p>
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table, th, td {
+  border: 2px solid black;
+  font-weight:400;
+}
+
+th, td {
+  padding: 5px
+}
+</style>
+</head>
+<body>
+
+<table>
+  <tr>
+    <th>Zahlungsmittel 1</th>
+    <td> {{player.MOP1}} Taler </td>
+  </tr>
+  <tr>
+    <th>Zahlungsmittel 2</th>
+    <td> {{player.MOP2}} Taler</td>
+  </tr>
+  <tr>
+    <th>Zahlungsmittel 3</th>
+    <td> {{player.field_maybe_none('MOP3')}} Taler </td>
+  </tr>
+</table>
+
+</body>
+</html>
+
+<br>
+<p>Ihr <b>Einkommen in Marktrunde {{ player.round_number }}:</b></p>
+
+<!DOCTYPE html>
+<html>
+<style>
+table, th, td {
+  border:1px solid black;
+}
+
+</style>
+<body>
+
+<table style="width:110%">
+  <tr>
+    <th> Erfolgreiche Transaktionen mit Zahlungsmittel 1</th>
+    <th> Erfolgreiche Transaktionen mit Zahlungsmittel 2</th>
+    <th> Erfolgreiche Transaktionen mit Zahlungsmittel 3</th>
+    <th> Einkommen aus Zahlungsmittel 1</th>
+    <th> Einkommen aus Zahlungsmittel 2</th>
+    <th> Einkommen aus Zahlungsmittel 3</th>
+    <th> Ihr Gesamteinkommen</th>
+    
+  </tr>
+  <tr>
+    <td>{{ player.field_maybe_none('transactions_MOP1')|to0}}</td>
+    <td>{{ player.field_maybe_none('transactions_MOP2')|to0}}</td>
+    <td>{{ player.field_maybe_none('transactions_MOP3')|to0}}</td>
+    <td>{{player.field_maybe_none('payoff_MOP1')|to2}} Taler</td>
+    <td> {{player.field_maybe_none('payoff_MOP2')|to2}} Taler</td>
+    <td>{{player.field_maybe_none('payoff_MOP3')|to2}} Taler</td>
+    <td>{{player.field_maybe_none('payoff_allMOP')|to2}} Taler</td>
+    
+  </tr>
+  
+</table>
+<br>
+<p>Ihr Gesamteinkommen mit anonymen Zahlungsmitteln: {{player.payoff_anonym|to2}}</p>
+<p>Ihr Gesamteinkommen mit nicht anonymen Zahlungsmitteln: {{player.payoff_notanonym|to2}}</p>
+
+<p>Bitte klicken Sie auf Weiter.</p>
+
+</body>
+</html>
+
+{#
+<script>
+  let ElepayoffMOP2 = document.getElementById('payoffMOP2');
+
+  function recalc() {
+       
+      let payoffMOP2 = js_vars.T2 -(js_vars.T2 * js_vars.TC2);
+        ElepayoffMOP2.innerText = payoffMOP2 +  ' Taler';
+      return payoffMOP2;
+  }
+  
+</script>#}
+
+
+{{ next_button }}
+{{ endblock }}
+
