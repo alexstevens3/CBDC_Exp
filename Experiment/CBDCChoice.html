@@ -1,0 +1,223 @@
+{{ block title }}
+Marktrunde {{ player.round_number }} von {{C.NUM_ROUNDS}}
+{{ endblock }}
+
+{{ block content }}
+<p>Bitte entscheiden Sie, ob Sie <b>Zahlungsmittel 3</b> in Marktrunde {{ player.round_number }} nutzen möchten. </p>
+
+<p>Für die Nutzung von Zahlungsmittel 3 müssen Sie einmalig (pro Marktrunde) <b>{{C.Adoption_MOP3|to2}} Taler</b> zahlen.</p>
+
+{{ formfields }}
+
+{{ if player.CBDC_design == "Token" }}
+
+<details>
+    <summary>Klicken Sie hier für eine Beschreibung der Zahlungsmittel.</summary>
+        <br>
+        <!DOCTYPE html>
+    <html>
+    <head>
+    <style>
+    table {
+      border: 1px solid black;
+      border-collapse: collapse;
+     
+    }
+    td {
+        padding-right: 10px;
+    }
+    
+    th, td {
+      padding: 3px;
+    }
+    table, th, td {
+        font-weight:400;
+        padding-top: 0px;
+      padding-bottom: 0px;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+    
+    </style>
+    </head>
+    <body>
+      <small>
+    Zahlungsmittel 1:
+    
+    <table>
+      <tr>
+        <th>Akzeptanz</th>
+        <td>  100% </td>
+      </tr>
+      <tr>
+        <th>Anonymität</th>
+        <td> Ja</td>
+      </tr>
+      <tr>
+        <th>Transaktionskosten</th>
+        <td>  0.60 Taler</td>
+      </tr>
+      <tr>
+        <th>Fixkosten</th>
+        <td>  0.00 Taler</td>
+      </tr>
+    </table>
+    <br>
+    Zahlungsmittel 2:
+    <table>
+        <tr>
+          <th>Akzeptanz</th>
+          <td>  81% </td>
+        </tr>
+        <tr>
+          <th>Anonymität</th>
+          <td> Nein</td>
+        </tr>
+        <tr>
+          <th>Transaktionskosten</th>
+          <td>  0.38 Taler</td>
+        </tr>
+        <tr>
+          <th>Fixkosten</th>
+          <td>  0.00 Taler</td>
+        </tr>
+      </table>
+      <br>
+      Zahlungsmittel 3:
+      <table>
+          <tr>
+            <th>Akzeptanz</th>
+            <td>  0 oder 100% </td>
+          </tr>
+          <tr>
+            <th>Anonymität</th>
+            <td> Ja</td>
+          </tr>
+          <tr>
+            <th>Transaktionskosten</th>
+            <td>  0.10 Taler</td>
+          </tr>
+          <tr>
+            <th>Fixkosten</th>
+            <td>  0.40 Taler</td>
+          </tr>
+        </table>
+      </small>
+    </body>
+    </html>
+        
+    </details>
+    
+    {{ endif }}
+    
+    
+{{ if player.CBDC_design == "Account" }}
+
+<details>
+    <summary>Klicken Sie hier für eine Beschreibung der Zahlungsmittel.</summary>
+    <br>
+    <!DOCTYPE html>
+<html>
+<head>
+<style>
+table {
+  border: 1px solid black;
+  border-collapse: collapse;
+ 
+}
+td {
+    padding-right: 10px;
+}
+
+th, td {
+  padding: 3px;
+}
+table, th, td {
+    font-weight:400;
+    padding-top: 0px;
+  padding-bottom: 0px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+
+</style>
+</head>
+<body>
+  <small>
+Zahlungsmittel 1:
+<br>
+
+
+<table>
+  <tr>
+    <th>Akzeptanz</th>
+    <td>  100% </td>
+  </tr>
+  <tr>
+    <th>Anonymität</th>
+    <td> Ja</td>
+  </tr>
+  <tr>
+    <th>Transaktionskosten</th>
+    <td>  0.60 Taler</td>
+  </tr>
+  <tr>
+    <th>Fixkosten</th>
+    <td>  0.00 Taler</td>
+  </tr>
+</table>
+<br>
+Zahlungsmittel 2:
+<br>
+<table>
+    <tr>
+      <th>Akzeptanz</th>
+      <td>  81% </td>
+    </tr>
+    <tr>
+      <th>Anonymität</th>
+      <td> Nein</td>
+    </tr>
+    <tr>
+      <th>Transaktionskosten</th>
+      <td>  0.38 Taler</td>
+    </tr>
+    <tr>
+      <th>Fixkosten</th>
+      <td>  0.00 Taler</td>
+    </tr>
+  </table>
+  <br>
+  Zahlungsmittel 3:
+  <br>
+  <table>
+      <tr>
+        <th>Akzeptanz</th>
+        <td>  0 oder 100% </td>
+      </tr>
+      <tr>
+        <th>Anonymität</th>
+        <td> Nein</td>
+      </tr>
+      <tr>
+        <th>Transaktionskosten</th>
+        <td>  0.10 Taler</td>
+      </tr>
+      <tr>
+        <th>Fixkosten</th>
+        <td>  0.40 Taler</td>
+      </tr>
+    </table>
+  </small>
+
+</body>
+</html>
+</details>    
+        
+{{ endif }}
+
+<br>
+
+    {{ next_button }}
+{{ endblock }}

@@ -1,0 +1,50 @@
+{{ block title }}
+    Seite 11 von 17
+{{ endblock }}
+
+{{ block content }}
+<p>Bitte beantworten Sie die folgende Frage.</p>
+Bitte geben Sie an, welche der folgenden Zahlungsinstrumente Sie kennen (Mehrfachnennung möglich).
+<br>
+<br>
+<div class="form-check">
+    <input class="form-check-input" type="checkbox" value="Bargeld" name="Bargeld">
+    <label class="form-check-label">
+      Bargeld
+    </label>
+</div>
+<div class="form-check">
+    <input class="form-check-input" type="checkbox" value="Debitkarte" name="Debitkarte">
+    <label class="form-check-label">
+      Debitkarte
+    </label>
+</div>
+<div class="form-check">
+    <input class="form-check-input" type="checkbox" value="Kreditkarte" name="Kreditkarte">
+    <label class="form-check-label">
+      Kreditkarte
+    </label>
+</div>
+<div class="form-check">
+    <input class="form-check-input" type="checkbox" value="Lastschrift_Überweisung" name="Lastschrift_Überweisung">
+    <label class="form-check-label">
+        Lastschrift und Überweisung
+    </label>
+</div>
+<div class="form-check">
+    <input class="form-check-input" type="checkbox" value="Internetbezahlverfahren" name="Internetbezahlverfahren">
+    <label class="form-check-label">
+      Internetbezahlverfahren (z.B. PayPal)
+    </label>
+</div>
+<div class="form-check">
+    <input class="form-check-input" type="checkbox" value="mobil" name="mobil">
+    <label class="form-check-label">
+      Mobile Bezahlverfahren (z.B. Apple Pay, Google Pay, Bezahl-App der Bank)
+    </label>
+</div>
+
+<br>
+  
+{{ next_button }}
+{{ endblock }}
