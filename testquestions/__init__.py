@@ -87,7 +87,7 @@ class Questions(Page):
         
 
 class WaitingPage(WaitPage):
-    template_name = 'testquestions\WaitingPage.html'
+    template_name = 'testquestions/WaitingPage.html'
     wait_for_all_players = True
 
 class Results(Page):
