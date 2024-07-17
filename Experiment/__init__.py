@@ -161,7 +161,7 @@ class PaymentChoice(Page):
         return dict(TC1=C.TC_MOP1, TC2=C.TC_MOP2, TC3=C.TC_MOP3)
 
 class WaitingPage(WaitPage):
-    template_name = 'Experiment\WaitingPage.html'
+    template_name = 'Experiment/WaitingPage.html'
     wait_for_all_players = True
 
 class Beliefs(Page):
@@ -211,7 +211,7 @@ class Welcome(Page):
         return player.round_number == 1
 
 class WaitingPage2(WaitPage):
-    template_name = 'Experiment\WaitingPage2.html'
+    template_name = 'Experiment/WaitingPage2.html'
     wait_for_all_players = True
 
 class Trading(Page):
