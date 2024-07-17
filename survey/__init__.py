@@ -382,7 +382,7 @@ class Demographics_degree(Page):
     form_fields = ['degree', 'semester', 'grade']
 
 class WaitingPage(WaitPage):
-    template_name = 'Experiment\WaitingPage.html'
+    template_name = 'Experiment/WaitingPage.html'
     wait_for_all_players = True
 
     from otree.api import Page, models, widgets
