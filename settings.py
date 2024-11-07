@@ -34,7 +34,7 @@ ROOMS = [
     dict(
         name='DiceLab',
         display_name='DiceLab',
-        participant_label_file='C:/CBDC/CBDC/dicelab_otree_labels.txt'
+        participant_label_file='dicelab_otree_labels.txt'
     )
 ]
 
