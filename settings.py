@@ -5,6 +5,7 @@ SESSION_CONFIGS = [
          name='CBDC_Experiment',
          app_sequence=['testquestions','Testround','Experiment','survey', 'payment' ],
          num_demo_participants=10,
+          #use_browser_bots=True,
        
        display_name="CBDC_Experiment",
        
