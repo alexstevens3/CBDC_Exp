@@ -1,0 +1,519 @@
+{{ extends "global/Page.html" }}
+
+{{ block title }}
+Testrunde
+{{ endblock }}
+{{ block content }}
+
+{{ if player.testCBDC_Choice == True }}
+
+<p>Sie haben sich dazu entschieden, Zahlungsmittel 3 in der Testrunde zu nutzen.
+    
+{{ endif }}
+
+{{ if player.testCBDC_Choice == False }}
+
+<p>Sie haben sich dazu entschieden, Zahlungsmittel 3 in der Testrunde <b>nicht</b> zu nutzen.</p>
+
+{{ endif }}
+
+<p>Bitte teilen Sie die 10 Taler auf die Zahlungsmittel auf. </p>
+
+{{formfield 'testMOP1'}}
+
+{{formfield 'testMOP2'}}
+
+{{if player.testCBDC_Choice == True}}
+
+{{formfield 'testMOP3'}}
+
+{{endif}}
+
+{{ if player.testCBDC_design == "Token" and player.testCBDC_Choice == False}}
+
+<details>
+    <summary>Klicken Sie hier für eine Beschreibung der Zahlungsmittel.</summary>
+    <br>
+    <!DOCTYPE html>
+<html>
+<head>
+<style>
+table {
+  border: 1px solid black;
+  border-collapse: collapse;
+ 
+}
+td {
+    padding-right: 10px;
+}
+
+th, td {
+  padding: 3px;
+}
+table, th, td {
+    font-weight:400;
+    padding-top: 0px;
+  padding-bottom: 0px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+</style>
+</head>
+<body>
+  <small>
+Zahlungsmittel 1:
+<br>
+
+<table>
+  <tr>
+    <th>Akzeptanz</th>
+    <td>  100% </td>
+  </tr>
+  <tr>
+    <th>Anonymität</th>
+    <td> Ja</td>
+  </tr>
+  <tr>
+    <th>Transaktionskosten</th>
+    <td>  0.60 Taler</td>
+  </tr>
+  <tr>
+    <th>Fixkosten</th>
+    <td>  0.00 Taler</td>
+  </tr>
+</table>
+<br>
+Zahlungsmittel 2:
+<br>
+<table>
+    <tr>
+      <th>Akzeptanz</th>
+      <td>  81% </td>
+    </tr>
+    <tr>
+      <th>Anonymität</th>
+      <td> Nein</td>
+    </tr>
+    <tr>
+      <th>Transaktionskosten</th>
+      <td>  0.38 Taler</td>
+    </tr>
+    <tr>
+      <th>Fixkosten</th>
+      <td>  0.00 Taler</td>
+    </tr>
+  </table>
+</small>
+</body>
+</html>
+    
+</details>
+
+{{ endif }}
+
+
+{{ if player.testCBDC_design == "Token" and player.testCBDC_Choice == True}}
+
+<details>
+    <summary>Klicken Sie hier für eine Beschreibung der Zahlungsmittel.</summary>
+    <br>
+    <!DOCTYPE html>
+<html>
+<head>
+<style>
+table {
+  border: 1px solid black;
+  border-collapse: collapse;
+ 
+}
+td {
+    padding-right: 10px;
+}
+
+th, td {
+  padding: 3px;
+}
+table, th, td {
+    font-weight:400;
+    padding-top: 0px;
+  padding-bottom: 0px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+</style>
+</head>
+<small>
+<body>
+Zahlungsmittel 1:
+<br>
+
+<table>
+  <tr>
+    <th>Akzeptanz</th>
+    <td>  100% </td>
+  </tr>
+  <tr>
+    <th>Anonymität</th>
+    <td> Ja</td>
+  </tr>
+  <tr>
+    <th>Transaktionskosten</th>
+    <td>  0.60 Taler</td>
+  </tr>
+  <tr>
+    <th>Fixkosten</th>
+    <td>  0.00 Taler</td>
+  </tr>
+</table>
+<br>
+Zahlungsmittel 2:
+<br>
+<table>
+    <tr>
+      <th>Akzeptanz</th>
+      <td>  81% </td>
+    </tr>
+    <tr>
+      <th>Anonymität</th>
+      <td> Nein</td>
+    </tr>
+    <tr>
+      <th>Transaktionskosten</th>
+      <td>  0.38 Taler</td>
+    </tr>
+    <tr>
+      <th>Fixkosten</th>
+      <td>  0.00 Taler</td>
+    </tr>
+  </table>
+  <br>
+  Zahlungsmittel 3:
+  <br>
+  <table>
+      <tr>
+        <th>Akzeptanz</th>
+        <td>  0 oder 100% </td>
+      </tr>
+      <tr>
+        <th>Anonymität</th>
+        <td> Ja</td>
+      </tr>
+      <tr>
+        <th>Transaktionskosten</th>
+        <td>  0.10 Taler</td>
+      </tr>
+      <tr>
+        <th>Fixkosten</th>
+        <td>  0.40 Taler</td>
+      </tr>
+    </table>
+  </small>
+</body>
+</html>
+    
+</details>
+
+{{ endif }}
+    
+{{ if player.testCBDC_design == "Account" and player.testCBDC_Choice == True }}
+
+<details>
+    <summary>Klicken Sie hier für eine Beschreibung der Zahlungsmittel.</summary>
+    <br>
+    <!DOCTYPE html>
+<html>
+<head>
+<style>
+table {
+  border: 1px solid black;
+  border-collapse: collapse;
+ 
+}
+td {
+    padding-right: 10px;
+}
+
+th, td {
+  padding: 3px;
+}
+table, th, td {
+    font-weight:400;
+    padding-top: 0px;
+  padding-bottom: 0px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+</style>
+</head>
+<body>
+  <small>
+Zahlungsmittel 1:
+<br>
+
+<table>
+  <tr>
+    <th>Akzeptanz</th>
+    <td>  100% </td>
+  </tr>
+  <tr>
+    <th>Anonymität</th>
+    <td> Ja</td>
+  </tr>
+  <tr>
+    <th>Transaktionskosten</th>
+    <td>  0.60 Taler</td>
+  </tr>
+  <tr>
+    <th>Fixkosten</th>
+    <td>  0.00 Taler</td>
+  </tr>
+</table>
+<br>
+Zahlungsmittel 2:
+<br>
+<table>
+    <tr>
+      <th>Akzeptanz</th>
+      <td>  81% </td>
+    </tr>
+    <tr>
+      <th>Anonymität</th>
+      <td> Nein</td>
+    </tr>
+    <tr>
+      <th>Transaktionskosten</th>
+      <td>  0.38 Taler</td>
+    </tr>
+    <tr>
+      <th>Fixkosten</th>
+      <td>  0.00 Taler</td>
+    </tr>
+  </table>
+  <br>
+  Zahlungsmittel 3:
+  <br>
+  <table>
+      <tr>
+        <th>Akzeptanz</th>
+        <td>  0 oder 100% </td>
+      </tr>
+      <tr>
+        <th>Anonymität</th>
+        <td> Nein</td>
+      </tr>
+      <tr>
+        <th>Transaktionskosten</th>
+        <td>  0.10 Taler</td>
+      </tr>
+      <tr>
+        <th>Fixkosten</th>
+        <td>  0.40 Taler</td>
+      </tr>
+    </table>
+  </small>
+</body>
+</html>
+    
+</details>    
+    
+        
+{{ endif }}
+
+{{ if player.testCBDC_design == "Account" and player.testCBDC_Choice == False }}
+
+<details>
+    <summary>Klicken Sie hier für eine Beschreibung der Zahlungsmittel.</summary>
+    <br>
+    <!DOCTYPE html>
+<html>
+<head>
+<style>
+table {
+  border: 1px solid black;
+  border-collapse: collapse;
+ 
+}
+td {
+    padding-right: 10px;
+}
+
+th, td {
+  padding: 3px;
+}
+table, th, td {
+    font-weight:400;
+    padding-top: 0px;
+  padding-bottom: 0px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+</style>
+</head>
+<body>
+  <small>
+Zahlungsmittel 1:
+<br>
+
+<table>
+  <tr>
+    <th>Akzeptanz</th>
+    <td>  100% </td>
+  </tr>
+  <tr>
+    <th>Anonymität</th>
+    <td> Ja</td>
+  </tr>
+  <tr>
+    <th>Transaktionskosten</th>
+    <td>  0.60 Taler</td>
+  </tr>
+  <tr>
+    <th>Fixkosten</th>
+    <td>  0.00 Taler</td>
+  </tr>
+</table>
+<br>
+Zahlungsmittel 2:
+<br>
+<table>
+    <tr>
+      <th>Akzeptanz</th>
+      <td>  81% </td>
+    </tr>
+    <tr>
+      <th>Anonymität</th>
+      <td> Nein</td>
+    </tr>
+    <tr>
+      <th>Transaktionskosten</th>
+      <td>  0.38 Taler</td>
+    </tr>
+    <tr>
+      <th>Fixkosten</th>
+      <td>  0.00 Taler</td>
+    </tr>
+  </table>
+</small>
+</body>
+</html>
+    
+</details>    
+    
+        
+{{ endif }}
+    
+<br>
+
+<details>
+    <summary>Klicken Sie hier für einen Taschenrechner.</summary>
+<br>
+
+<p>Bitte geben Sie an, wie Sie die 10 Taler auf die Zahlungsmittel aufteilen möchten. 
+</p>
+
+{{formfield 'amount1'}}
+
+{{formfield 'amount2'}}
+
+{{if player.testCBDC_Choice == True}}
+
+{{formfield 'amount3'}}
+
+{{endif}}
+
+<p>Einkommen aus Zahlungsmittel 1: <span id="projection"></span> </p>
+
+<p>Einkommen aus Zahlungsmittel 2: <span id="projection2"></span> </p>
+
+{{if player.testCBDC_Choice == True}}
+
+<p>Einkommen aus Zahlungsmittel 3: <span id="projection3"></span></p>
+
+{{endif}}
+
+</details>
+
+<script>
+    let projectionEle = document.getElementById('projection');
+
+    function recalc() {
+        let amount1 = parseFloat(forminputs.amount1.value);
+      
+        if (amount1 == 0 || amount1 == 1 || amount1 == 2 || amount1 == 3 || amount1 == 4 || amount1 == 5 || amount1 == 6 || amount1 == 7 || amount1 == 8 || amount1 == 9 || amount1 == 10 ){
+            let projection = amount1 -(amount1 * js_vars.TC1);
+            projectionEle.innerText = projection.toFixed(2) +  ' Taler';
+        } else{
+            projectionEle.innerText = 'Bitte geben Sie ganze Werte zwischen 0 und 10 an';
+        } 
+    }
+
+    
+    forminputs.amount1.oninput = recalc;
+
+</script>
+
+<script>
+    let projection2Ele = document.getElementById('projection2');
+
+    function recalc() {
+        let amount2 = parseFloat(forminputs.amount2.value);
+      
+        if (amount2 == 0 || amount2 == 1 || amount2 == 2 || amount2 == 3 || amount2 == 4 || amount2 == 5 || amount2 == 6 || amount2 == 7 || amount2 == 8 || amount2 == 9 || amount2 == 10 ){
+            let projection2 = amount2 -(amount2 * js_vars.TC2);
+            projection2Ele.innerText = projection2.toFixed(2) +  ' Taler';
+        } else{
+            projection2Ele.innerText = 'Bitte geben Sie ganze Werte zwischen 0 und 10 an';
+        } 
+    }
+   
+    forminputs.amount2.oninput = recalc;
+
+</script>
+<script>
+    let projection3Ele = document.getElementById('projection3');
+
+    function recalc() {
+        let amount3 = parseFloat(forminputs.amount3.value);
+      
+        if (amount3 == 0 || amount3 == 1 || amount3 == 2 || amount3 == 3 || amount3 == 4 || amount3 == 5 || amount3 == 6 || amount3 == 7 || amount3 == 8 || amount3 == 9 || amount3 == 10 ){
+            let projection3 = amount3 -(amount3 * js_vars.TC3);
+            projection3Ele.innerText = projection3.toFixed(2) +  ' Taler';
+        } else{
+            projection3Ele.innerText = 'Bitte geben Sie ganze Werte zwischen 0 und 10 an';
+        } 
+    }
+   
+    forminputs.amount3.oninput = recalc;
+
+</script>
+
+
+<p id="p01"></p>
+
+<script>
+
+    function myFunction() {
+        const message = document.getElementById("p01");
+        message.innerHTML = "";
+        let amount1 = document.getElementById("amount1").value;
+    try {
+        if(amount1 >5) throw "not a number";
+    }
+    catch(err) {
+        message.innerHTML = "Input is " + err;
+    }
+    }
+</script>
+
+
+{{ next_button }}
+
+
+{{ endblock }}
+
+
+
