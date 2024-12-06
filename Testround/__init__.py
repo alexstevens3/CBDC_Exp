@@ -13,7 +13,7 @@ class C(BaseConstants):
     TC_MOP1 = 0.60
     TC_MOP2 = 0.38
     TC_MOP3 = 0.10
-    Adoption_MOP3 = 0.40 
+    
      
 
 @staticmethod

@@ -2,17 +2,34 @@ from os import environ
 
 SESSION_CONFIGS = [
      dict(
-         name='CBDC_Experiment',
-         app_sequence=['testquestions','Testround','Experiment','survey', 'payment' ],
-         num_demo_participants=10,
-          #use_browser_bots=True,
+        name='CBDC_Experiment',
+        app_sequence=['testquestions','Testround','Experiment','survey', 'payment' ],
+        #app_sequence=['testquestions', 'Experiment','survey', 'payment' ],
+        num_demo_participants=10,
        
-       display_name="CBDC_Experiment",
+        display_name="CBDC_Experiment",
        
-       expShortName="Pilotsession", # Replace with your values
-       expId=17, # Replace with your values
-       sessId=0000000000, # Replace with your values
+        expShortName="CBDC", # Replace with your values
+        expId=17, # Replace with your values
+        sessId=0000000000, # Replace with your values
+        #use_browser_bots=True,
+        Adoption_MOP3 = '0.5'
+    )]  
+
+SESSION_CONFIGS = [
+     dict(
+        name='CBDC_Experiment',
+        app_sequence=['testquestions','Testround','Experiment','survey', 'payment' ],
+        #app_sequence=['testquestions', 'Experiment','survey', 'payment' ],
+        num_demo_participants=10,
        
+        display_name="CBDC_Experiment",
+       
+        expShortName="CBDC", # Replace with your values
+        expId=17, # Replace with your values
+        sessId=0000000000, # Replace with your values
+        #use_browser_bots=True,
+        Adoption_MOP3 = '0.4'
     )]  
 
 # if you set a property in SESSION_CONFIG_DEFAULTS, it will be inherited by all configs

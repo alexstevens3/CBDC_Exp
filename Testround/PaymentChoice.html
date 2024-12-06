@@ -113,7 +113,7 @@ Zahlungsmittel 2:
 {{ endif }}
 
 
-{{ if player.testCBDC_design == "Token" and player.testCBDC_Choice == True}}
+{% if player.testCBDC_design == "Token" and player.testCBDC_Choice == True and session.config.Adoption_MOP3 == '0.4' %}
 
 <details>
     <summary>Klicken Sie hier für eine Beschreibung der Zahlungsmittel.</summary>
@@ -144,8 +144,8 @@ table, th, td {
 
 </style>
 </head>
-<small>
 <body>
+  <small>
 Zahlungsmittel 1:
 <br>
 
@@ -215,9 +215,114 @@ Zahlungsmittel 2:
     
 </details>
 
-{{ endif }}
+{% endif %}
+
+{% if player.testCBDC_design == "Token" and player.testCBDC_Choice == True and session.config.Adoption_MOP3 == '0.5' %}
+
+<details>
+    <summary>Klicken Sie hier für eine Beschreibung der Zahlungsmittel.</summary>
+    <br>
+    <!DOCTYPE html>
+<html>
+<head>
+<style>
+table {
+  border: 1px solid black;
+  border-collapse: collapse;
+ 
+}
+td {
+    padding-right: 10px;
+}
+
+th, td {
+  padding: 3px;
+}
+table, th, td {
+    font-weight:400;
+    padding-top: 0px;
+  padding-bottom: 0px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+</style>
+</head>
+<body>
+  <small>
+Zahlungsmittel 1:
+<br>
+
+<table>
+  <tr>
+    <th>Akzeptanz</th>
+    <td>  100% </td>
+  </tr>
+  <tr>
+    <th>Anonymität</th>
+    <td> Ja</td>
+  </tr>
+  <tr>
+    <th>Transaktionskosten</th>
+    <td>  0.60 Taler</td>
+  </tr>
+  <tr>
+    <th>Fixkosten</th>
+    <td>  0.00 Taler</td>
+  </tr>
+</table>
+<br>
+Zahlungsmittel 2:
+<br>
+<table>
+    <tr>
+      <th>Akzeptanz</th>
+      <td>  81% </td>
+    </tr>
+    <tr>
+      <th>Anonymität</th>
+      <td> Nein</td>
+    </tr>
+    <tr>
+      <th>Transaktionskosten</th>
+      <td>  0.38 Taler</td>
+    </tr>
+    <tr>
+      <th>Fixkosten</th>
+      <td>  0.00 Taler</td>
+    </tr>
+  </table>
+  <br>
+  Zahlungsmittel 3:
+  <br>
+  <table>
+      <tr>
+        <th>Akzeptanz</th>
+        <td>  0 oder 100% </td>
+      </tr>
+      <tr>
+        <th>Anonymität</th>
+        <td> Ja</td>
+      </tr>
+      <tr>
+        <th>Transaktionskosten</th>
+        <td>  0.10 Taler</td>
+      </tr>
+      <tr>
+        <th>Fixkosten</th>
+        <td>  0.50 Taler</td>
+      </tr>
+    </table>
+  </small>
+</body>
+</html>
     
-{{ if player.testCBDC_design == "Account" and player.testCBDC_Choice == True }}
+</details>
+
+{% endif %}
+    
+    
+{% if player.testCBDC_design == "Account" and player.testCBDC_Choice == True and session.config.Adoption_MOP3 == '0.4' %}
 
 <details>
     <summary>Klicken Sie hier für eine Beschreibung der Zahlungsmittel.</summary>
@@ -320,7 +425,112 @@ Zahlungsmittel 2:
 </details>    
     
         
-{{ endif }}
+{% endif %}
+
+{% if player.testCBDC_design == "Account" and player.testCBDC_Choice == True and session.config.Adoption_MOP3 == '0.5' %}
+
+<details>
+    <summary>Klicken Sie hier für eine Beschreibung der Zahlungsmittel.</summary>
+    <br>
+    <!DOCTYPE html>
+<html>
+<head>
+<style>
+table {
+  border: 1px solid black;
+  border-collapse: collapse;
+ 
+}
+td {
+    padding-right: 10px;
+}
+
+th, td {
+  padding: 3px;
+}
+table, th, td {
+    font-weight:400;
+    padding-top: 0px;
+  padding-bottom: 0px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+</style>
+</head>
+<body>
+  <small>
+Zahlungsmittel 1:
+<br>
+
+<table>
+  <tr>
+    <th>Akzeptanz</th>
+    <td>  100% </td>
+  </tr>
+  <tr>
+    <th>Anonymität</th>
+    <td> Ja</td>
+  </tr>
+  <tr>
+    <th>Transaktionskosten</th>
+    <td>  0.60 Taler</td>
+  </tr>
+  <tr>
+    <th>Fixkosten</th>
+    <td>  0.00 Taler</td>
+  </tr>
+</table>
+<br>
+Zahlungsmittel 2:
+<br>
+<table>
+    <tr>
+      <th>Akzeptanz</th>
+      <td>  81% </td>
+    </tr>
+    <tr>
+      <th>Anonymität</th>
+      <td> Nein</td>
+    </tr>
+    <tr>
+      <th>Transaktionskosten</th>
+      <td>  0.38 Taler</td>
+    </tr>
+    <tr>
+      <th>Fixkosten</th>
+      <td>  0.00 Taler</td>
+    </tr>
+  </table>
+  <br>
+  Zahlungsmittel 3:
+  <br>
+  <table>
+      <tr>
+        <th>Akzeptanz</th>
+        <td>  0 oder 100% </td>
+      </tr>
+      <tr>
+        <th>Anonymität</th>
+        <td> Nein</td>
+      </tr>
+      <tr>
+        <th>Transaktionskosten</th>
+        <td>  0.10 Taler</td>
+      </tr>
+      <tr>
+        <th>Fixkosten</th>
+        <td>  0.50 Taler</td>
+      </tr>
+    </table>
+  </small>
+</body>
+</html>
+    
+</details>    
+    
+        
+{% endif %}
 
 {{ if player.testCBDC_design == "Account" and player.testCBDC_Choice == False }}
 
