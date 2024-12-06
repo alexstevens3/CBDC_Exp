@@ -23,7 +23,7 @@ table, th, td {
 <table>
     <tbody>
     <tr>
-    <td>Anteil der Käufer, die {{C.Adoption_MOP3|to2}} Taler für die Nutzung von Zahlungsmittel 3 gezahlt haben: </td>
+    <td>Anteil der Käufer, die {{session.config.Adoption_MOP3|to2}} Taler für die Nutzung von Zahlungsmittel 3 gezahlt haben: </td>
     <td>{{group.share_players_CBDC_Yes |to0}}% </td>
     </tr>
     <tr>
@@ -37,7 +37,7 @@ table, th, td {
 
 <p>Bitte prognostizieren Sie für die nächste Marktrunde <b>(Marktrunde {{player.next_round}})</b>:</p>
 
-<p>Wie viele Käufer werden {{C.Adoption_MOP3|to2}} Taler zahlen um Zahlungsmittel 3 nutzen zu können? (Werte zwischen 0 und {{C.PLAYERS_PER_GROUP}})</p> {{formfield 'belief1'}}
+<p>Wie viele Käufer werden {{session.config.Adoption_MOP3|to2}} Taler zahlen um Zahlungsmittel 3 nutzen zu können? (Werte zwischen 0 und {{C.PLAYERS_PER_GROUP}})</p> {{formfield 'belief1'}}
 
 <p>Wieviele Taler werden Käufer im Durchschnitt auf Zahlungsmittel 3 verteilen? (Werte zwischen 0 und 10)</p> {{formfield 'belief2'}}
 

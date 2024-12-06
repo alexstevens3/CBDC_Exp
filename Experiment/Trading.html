@@ -19,13 +19,13 @@ Marktrunde {{ player.round_number }} von {{C.NUM_ROUNDS}}
 
 {{if group.share_players_CBDC_Yes >= 50}}
 
-<p>Der Anteil der Käufer, die {{C.Adoption_MOP3|to2}} Taler für die Nutzung von Zahlungsmittel 3 gezahlt haben ist {{group.share_players_CBDC_Yes |to0}}%. Der Verkäufer akzeptiert Zahlungsmittel 3.</p>
+<p>Der Anteil der Käufer, die {{session.config.Adoption_MOP3|to2}} Taler für die Nutzung von Zahlungsmittel 3 gezahlt haben ist {{group.share_players_CBDC_Yes |to0}}%. Der Verkäufer akzeptiert Zahlungsmittel 3.</p>
 
 {{ endif }}
 
 {{if group.share_players_CBDC_Yes < 50}}
 
-<p>Der Anteil der Käufer, die {{C.Adoption_MOP3|to2}} Taler für die Nutzung von Zahlungsmittel 3 gezahlt haben ist {{group.share_players_CBDC_Yes |to0}}%. Der Verkäufer akzeptiert Zahlungsmittel 3 <b>nicht</b>.</p>
+<p>Der Anteil der Käufer, die {{session.config.Adoption_MOP3|to2}} Taler für die Nutzung von Zahlungsmittel 3 gezahlt haben ist {{group.share_players_CBDC_Yes |to0}}%. Der Verkäufer akzeptiert Zahlungsmittel 3 <b>nicht</b>.</p>
 
 {{ endif }}
 

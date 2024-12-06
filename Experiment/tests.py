@@ -38,14 +38,12 @@ class PlayerBot(Bot):
             belief2 = random.randint(0, 10)
             belief3 = random.randint(0, 10000)
 
-            # Assert that values are within the specified bounds
             assert 0 <= belief1 <= 10, "belief1 should be between 0 and 10"
             assert 0 <= belief2 <= 10, "belief2 should be between 0 and 10"
             assert 0 <= belief3 <= 10000, "belief3 should be between 0 and 10000"
 
             yield Beliefs, dict(belief1=belief1, belief2=belief2, belief3=belief3)
         else:
-            # Yield the Beliefs page without filling values for rounds 1 and 10
             yield Beliefs
 
         yield Trading

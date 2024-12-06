@@ -27,6 +27,7 @@ class Group(BaseGroup):
 
 
 class Player(BasePlayer):
+    
     q1 = models.IntegerField(
         label= 'Wie viele Zahlungsmittel gibt es im Experiment?'
     )
@@ -41,8 +42,11 @@ class Player(BasePlayer):
     q4 = models.IntegerField(
         label= 'Wie hoch ist die Wahrscheinlichkeit, dass Zahlungsmittel 2 vom Verkäufer akzeptiert wird? (in %)'
     )
-    q5 = models.IntegerField(
+    q5_4 = models.IntegerField(
         label= 'Wie hoch muss der Anteil der Käufer mindestens sein, die 0.40 Taler für die Nutzung von Zahlungsmittel 3 zahlen, damit Zahlungsmittel 3 vom Verkäufer akzeptiert wird? (in %)'
+    )
+    q5_5 = models.IntegerField(
+        label= 'Wie hoch muss der Anteil der Käufer mindestens sein, die 0.50 Taler für die Nutzung von Zahlungsmittel 3 zahlen, damit Zahlungsmittel 3 vom Verkäufer akzeptiert wird? (in %)'
     )
     q1_answer = models.IntegerField()
     q2_answer = models.IntegerField()
@@ -64,8 +68,16 @@ class Welcome2(Page):
 
 
 class Questions(Page):
+
+    @staticmethod
+    def get_form_fields(player):
+        if player.session.config['Adoption_MOP3'] == '0.4':
+            return ['q1', 'q2', 'q3', 'q4', 'q5_4']  
+        else:
+            return ['q1', 'q2', 'q3', 'q4', 'q5_5'] 
+    
     form_model = 'player'
-    form_fields = ['q1', 'q2', 'q3', 'q4', 'q5']
+    
 
     @staticmethod
     def before_next_page(player, timeout_happened):
@@ -81,9 +93,18 @@ class Questions(Page):
         if player.q4 == C.q4_true:
             player.q4_answer = 1
         else: player.q4_answer = 0
-        if player.q5 == C.q5_true:
-            player.q5_answer = 1
-        else: player.q5_answer = 0
+
+        if player.session.config['Adoption_MOP3'] == '0.4':
+            if player.q5_4 == C.q5_true:
+                player.q5_answer = 1
+            else: player.q5_answer = 0
+        if player.session.config['Adoption_MOP3'] == '0.5': 
+            if player.q5_5 == C.q5_true:
+                player.q5_answer = 1
+            else: player.q5_answer = 0
+      
+
+
         
 
 class WaitingPage(WaitPage):

@@ -13,7 +13,7 @@ class C(BaseConstants):
     TC_MOP1 = 0.60
     TC_MOP2 = 0.38
     TC_MOP3 = 0.10
-    Adoption_MOP3 = 0.40 
+    
      
 @staticmethod
 def creating_session(subsession):
@@ -230,7 +230,8 @@ class Trading(Page):
 
     @staticmethod
     def vars_for_template(player):
-
+        
+        session=player.session
         group = player.group
         players = group.get_players()
         
@@ -240,7 +241,7 @@ class Trading(Page):
         if player.MOP2_accept == False:
             player.payoff_MOP2 = 0
         if player.CBDC_Choice == True: 
-            player.payoff_MOP3= player.transactions_MOP3 - (player.transactions_MOP3 * 0.1) - 0.4
+            player.payoff_MOP3= player.transactions_MOP3 - (player.transactions_MOP3 * 0.1) - session.config['Adoption_MOP3']
 
         if player.transactions_MOP3 == 0:
             player.payoff_MOP3 = 0
